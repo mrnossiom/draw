@@ -44,9 +44,9 @@
 //! .expect("Failed to save");
 //! ```
 //!
+
 use cgmath::EuclideanSpace;
 use cgmath::Point2;
-use rgb;
 
 pub mod canvas;
 pub mod drawing;

@@ -36,14 +36,6 @@ pub struct Style {
 }
 
 impl Style {
-    /// Default empty style with no fill or stroke
-    pub fn default() -> Style {
-        Style {
-            fill: None,
-            stroke: None,
-        }
-    }
-
     /// New style with both fill and stroke
     pub fn new(fill: Fill, stroke: Stroke) -> Style {
         Style {
@@ -86,9 +78,9 @@ impl Color {
     pub fn random() -> RGB {
         let mut rng = rand::thread_rng();
         RGB {
-            r: rng.gen_range(0, 255),
-            g: rng.gen_range(0, 255),
-            b: rng.gen_range(0, 255),
+            r: rng.gen_range(0..=255),
+            g: rng.gen_range(0..=255),
+            b: rng.gen_range(0..=255),
         }
     }
 }

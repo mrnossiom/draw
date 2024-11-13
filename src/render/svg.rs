@@ -20,6 +20,12 @@ impl SvgRenderer {
     }
 }
 
+impl Default for SvgRenderer {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Renderer for SvgRenderer {
     fn render(&self, canvas: &Canvas) -> Vec<u8> {
         // create a new svg document
@@ -57,10 +63,10 @@ fn render_shape(shape: &Shape, position: &Point, style: &Style, document: Docume
     // start by setting the shape of the element
     match shape {
         Shape::Rectangle { width, height } => {
-            element = rect(*width, *height, &position);
+            element = rect(*width, *height, position);
         }
         Shape::Circle { radius } => {
-            element = circle(*radius, &position);
+            element = circle(*radius, position);
         }
         Shape::Line { start, points } => {
             element = line(*start, points);

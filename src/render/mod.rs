@@ -36,7 +36,7 @@ pub fn save(canvas: &Canvas, path: &str, renderer: impl Renderer) -> io::Result<
     // render the canvas
     let bytes = renderer.render(canvas);
     // save to disk, overwrite
-    let mut file = File::create(&path)?;
+    let mut file = File::create(path)?;
     file.write_all(&bytes)?;
 
     Ok(())

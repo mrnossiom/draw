@@ -45,6 +45,12 @@ impl Drawing {
     }
 }
 
+impl Default for Drawing {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 /// A sorted Vec of Drawings, ordered from bottom to top.
 pub struct DisplayList {
     pub drawings: Vec<Drawing>,
@@ -68,5 +74,11 @@ impl DisplayList {
     /// todo: Implement
     pub fn remove(&mut self, _drawing_id: DrawingId) {
         unimplemented!()
+    }
+}
+
+impl Default for DisplayList {
+    fn default() -> Self {
+        Self::new()
     }
 }

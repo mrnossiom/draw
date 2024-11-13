@@ -26,13 +26,13 @@ fn lines() {
 #[test]
 fn random_circles() {
     let mut canvas = Canvas::new(1000, 1000);
-    let mut rng = SmallRng::from_seed([0; 16]);
+    let mut rng = SmallRng::from_seed([0; 32]);
     let mut points = vec![];
 
     for _ in 0..10000 {
         points.push(Point {
-            x: rng.gen_range(250, 750) as f32,
-            y: rng.gen_range(0, 1000) as f32,
+            x: rng.gen_range(250..=750) as f32,
+            y: rng.gen_range(0..=1000) as f32,
         })
     }
 
